@@ -3,7 +3,7 @@ Production settings for drportfolio project.
 """
 
 import dj_database_url
-from decouple import Csv, config
+from decouple import config
 
 from .base import *  # noqa: F401, F403
 
@@ -23,11 +23,9 @@ SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 
 # Database
 DATABASES = {
-    "default": dj_database_url.config(
-        default=config("DATABASE_URL"),
+    "default": dj_database_url.parse(
+        config("DATABASE_URL"),
         conn_max_age=600,
-        conn_health_checks=True,
-        ssl_require=True,
     )
 }
 
