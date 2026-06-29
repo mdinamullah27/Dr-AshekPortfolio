@@ -5,8 +5,10 @@ API v1 URL configuration.
 from django.urls import include, path
 
 urlpatterns = [
-    # Authentication
-    path("auth/", include("apps.accounts.urls")),
-    # Doctor Profiles
-    path("profiles/", include("apps.profiles.urls")),
+    path("doctor/", include("apps.doctor.urls")),
+    path("chambers/", include("apps.chambers.urls")),
+    path("blogs/", include("apps.blogs.urls")),
+    path("publications/", include("apps.publications.urls")),
+    path("videos/", include("apps.videos.urls")),
+    path("awards/", include("apps.awards.urls")),
 ]

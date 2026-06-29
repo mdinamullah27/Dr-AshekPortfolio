@@ -29,13 +29,3 @@ class StandardResultsPagination(PageNumberPagination):
                 "results": data,
             }
         )
-
-
-class SmallResultsPagination(PageNumberPagination):
-    """
-    Smaller pagination for dropdowns and lists.
-    """
-
-    page_size = 10
-    page_size_query_param = "page_size"
-    max_page_size = 50
